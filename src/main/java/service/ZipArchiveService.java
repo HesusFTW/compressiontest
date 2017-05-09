@@ -3,13 +3,10 @@ package service;
 import model.AbstractArchive;
 import org.apache.commons.compress.archivers.ArchiveEntry;
 import org.apache.commons.compress.archivers.ArchiveException;
-import org.apache.commons.compress.archivers.ArchiveOutputStream;
 import org.apache.commons.compress.archivers.zip.ZipArchiveEntry;
-import org.apache.commons.compress.archivers.zip.ZipArchiveOutputStream;
 import org.apache.commons.compress.compressors.CompressorException;
 
 import java.io.IOException;
-import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.LinkedList;
@@ -33,10 +30,15 @@ public class ZipArchiveService extends AbstractArchive {
 		entries.add(new ZipArchiveEntry(HIJKLMNOP_FILE.toFile(), HIJKLMNOP_FILE_NAME));
 //		entries.add(new ZipArchiveEntry(theNany.toFile(), "the.nanny.s02e01.dvdrip.xvid-wat.avi"));
 
+		ZipArchiveEntry zipArchiveEntry = new ZipArchiveEntry(ABC_FILE.toFile(), ABC_FILE_NAME);
+//		zipArchiveEntry.setLastModifiedTime()
 		files.add(ABC_FILE);
 		files.add(DEFG_FILE);
 		files.add(HIJKLMNOP_FILE);
 //		files.add(theNany);
+
+		archive = Paths.get("src/main/resources/extra.zip");
+		decompressFolder = Paths.get("src/main/resources/_decompress/");
 	}
 
 	public void destroy() {
@@ -65,9 +67,9 @@ public class ZipArchiveService extends AbstractArchive {
 		ZipArchiveService zipArchiveService = new ZipArchiveService();
 		zipArchiveService.init();
 //		compress
-		zipArchiveService.compress(zipArchiveService.getFiles(),
+/*		zipArchiveService.compress(zipArchiveService.getFiles(),
 				zipArchiveService.getEntries(),
-				zipArchiveService.getArchiveOutputStream(ARCHIVER_ZIP, zipArchiveService.getArchive()));
+				zipArchiveService.getArchiveOutputStream(ARCHIVER_ZIP, zipArchiveService.getArchive()));*/
 //      decompress
 		zipArchiveService.decompress(
 				zipArchiveService.getArchiveInputStream(ARCHIVER_ZIP, zipArchiveService.getArchive()),
@@ -76,7 +78,7 @@ public class ZipArchiveService extends AbstractArchive {
 		zipArchiveService.destroy();
 	}
 
-	@Override
+	/*@Override
 	public void compress(List<Path> files, List<ArchiveEntry> entries, ArchiveOutputStream archiveOutputStream) throws IOException {
 		ZipArchiveOutputStream zipArchiveOutputStream = (ZipArchiveOutputStream) archiveOutputStream;
 		zipArchiveOutputStream.setLevel(0);
@@ -86,6 +88,6 @@ public class ZipArchiveService extends AbstractArchive {
 			archiveOutputStream.closeArchiveEntry();
 		}
 		archiveOutputStream.close();
-	}
+	}*/
 
 }

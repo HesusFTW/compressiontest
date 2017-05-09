@@ -16,4 +16,6 @@ public class Constants {
 	public static final String ARCHIVER_CPIO = "cpio";
 	public static final String ARCHIVER_TAR = "tar";
 	public static final String ARCHIVER_ZIP = "zip";
+
+	public static final String COMPRESSOR_GZIP = "gz";
 }
