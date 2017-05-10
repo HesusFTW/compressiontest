@@ -18,4 +18,7 @@ public class Constants {
 	public static final String ARCHIVER_ZIP = "zip";
 
 	public static final String COMPRESSOR_GZIP = "gz";
+	public static final String COMPRESSOR_BZIP2 = "bz2";
+	public static final String COMPRESSOR_LZMA = "lzma";
+	public static final String COMPRESSOR_XZ = "xz";
 }

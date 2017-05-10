@@ -12,11 +12,11 @@ import java.nio.file.StandardOpenOption;
 
 public abstract class AbstractCompressor {
 
-	public void compress(BufferedInputStream bufferedInputStream, CompressorOutputStream bufferedOutputStream) throws IOException {
+	public void compress(BufferedInputStream bufferedInputStream, OutputStream bufferedOutputStream) throws IOException {
 		writeInputToOutputStream(bufferedInputStream, bufferedOutputStream);
 	}
 
-	public void decompress(CompressorInputStream bufferedInputStream, BufferedOutputStream bufferedOutputStream) throws IOException {
+	public void decompress(InputStream bufferedInputStream, BufferedOutputStream bufferedOutputStream) throws IOException {
 		writeInputToOutputStream(bufferedInputStream, bufferedOutputStream);
 	}
 
