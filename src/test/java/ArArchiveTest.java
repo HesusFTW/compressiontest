@@ -4,7 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import service.ArArchiveService;
+import service.archiver.ArArchiveService;
 
 import java.io.IOException;
 import java.nio.file.Files;

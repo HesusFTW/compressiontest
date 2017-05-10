@@ -1,4 +1,4 @@
-package service;
+package service.archiver;
 
 import model.AbstractArchive;
 import org.apache.commons.compress.archivers.ArchiveEntry;
@@ -69,7 +69,7 @@ public class ZipArchiveService extends AbstractArchive {
 //		compress
 /*		zipArchiveService.compress(zipArchiveService.getFiles(),
 				zipArchiveService.getEntries(),
-				zipArchiveService.getArchiveOutputStream(ARCHIVER_ZIP, zipArchiveService.getArchive()));*/
+				zipArchiveService.getArchiveOutputStream(ARCHIVER_ZIP, zipArchiveService.getCompression()));*/
 //      decompress
 		zipArchiveService.decompress(
 				zipArchiveService.getArchiveInputStream(ARCHIVER_ZIP, zipArchiveService.getArchive()),

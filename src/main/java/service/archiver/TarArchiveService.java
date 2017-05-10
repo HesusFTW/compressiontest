@@ -1,4 +1,4 @@
-package service;
+package service.archiver;
 
 import model.AbstractArchive;
 import org.apache.commons.compress.archivers.ArchiveEntry;

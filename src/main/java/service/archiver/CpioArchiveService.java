@@ -1,19 +1,13 @@
-package service;
+package service.archiver;
 
 import model.AbstractArchive;
-import model.Archive;
 import org.apache.commons.compress.archivers.*;
 import org.apache.commons.compress.archivers.cpio.CpioArchiveEntry;
-import org.apache.commons.compress.archivers.cpio.CpioArchiveOutputStream;
 import org.apache.commons.compress.compressors.CompressorException;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
 import java.io.IOException;
-import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
 import java.util.LinkedList;
 import java.util.List;
 
